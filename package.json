@@ -18,7 +18,10 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.3",
+    "express-graphql": "^0.12.0",
     "express-validator": "^7.0.1",
+    "graphql": "^15.3.0",
+    "graphql-import-node": "^0.0.5",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.4.1",
     "msnodesqlv8": "^4.1.0",
@@ -26,7 +29,8 @@
     "mysql2": "^3.5.2",
     "sequelize": "^6.32.1",
     "socket.io": "^4.7.2",
-    "tedious": "^16.4.0"
+    "tedious": "^16.4.0",
+    "validator": "^13.11.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

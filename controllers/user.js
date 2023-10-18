@@ -98,8 +98,8 @@ exports.logIn = async (req, res, next) => {
 	}
 	const token = JWT.sign(
 		{
-			email: user.dataValues.email,
-			userId: user.dataValues._id,
+			email: user.email,
+			userId: user._id,
 		},
 		"DJ_Rules_@nytime_@nyplace",
 		{

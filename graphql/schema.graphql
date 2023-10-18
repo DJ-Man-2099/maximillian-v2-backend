@@ -1,0 +1,61 @@
+type Post {
+	_id: ID!
+	title: String!
+	content: String!
+	imageUrl: String!
+	creator: User!
+	createdAt: String!
+	updatedAt: String!
+}
+
+type User {
+	_id: ID!
+	email: String!
+	name: String!
+	password: String!
+	status: String!
+	posts: [Post!]!
+}
+
+type AuthData {
+	token: String!
+	userId: String!
+}
+
+type getPostsData {
+	posts: [Post!]
+	totalItems: Int!
+}
+
+input UserData {
+	email: String!
+	password: String!
+	name: String!
+}
+
+input PostData {
+	title: String!
+	content: String!
+	imageUrl: String
+	postId: Int
+	isNew: Boolean!
+}
+
+type RootMutation {
+	createUser(userInput: UserData): User!
+	upsertPost(postInput: PostData): Post!
+	deletePost(postId: Int!): String!
+	updateStatus(status: String!): String!
+}
+
+type RootQuery {
+	login(email: String!, password: String): AuthData!
+	getPosts(limit: Int, page: Int): getPostsData!
+	getPost(postId: Int!): Post!
+	getStatus: String!
+}
+
+schema {
+	query: RootQuery
+	mutation: RootMutation
+}
